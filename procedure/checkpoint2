@@ -1,0 +1,16 @@
+FUNCTION insertion(arr) : ARRAY_OF INTEGER[5];
+VAR
+    i,j,temp : INTEGER ;
+BEGIN
+    Read(arr) ;
+    FOR i FROM 0 TO arr.length-1 STEP 1  DO
+        temp := arr[i] ;
+        j := i ;
+        WHILE (j>0 and arr[j-1]>temp) DO
+            arr[j] := arr[j-1] ;
+            j := j-1 ;
+        END_WHILE
+        arr[j] := temp ;
+    END_FOR
+    RETURN arr ;
+END

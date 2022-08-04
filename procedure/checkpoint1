@@ -1,0 +1,29 @@
+FUNCTION dot_product(v1,v2 : ARRAY_OF INTEGER[3];) : FLOAT
+VAR
+    i : INTEGER :=0 ;
+    product : FLOAT := 0 ;
+BEGIN
+    FOR i FROM 0 TO 3 STEP 1  DO
+        product := product + v1[i] * v2[i] ;
+    END_FOR
+    RETURN pro ;
+END
+ALGORITHM orthogonal
+VAR
+    i,j : INTEGER :=0 ;
+    v1,v2 : ARRAY_OF INTEGER[3];
+BEGIN
+    Read(v1) ;
+    Read(v2) ;
+    FOR i FROM 0 TO v1.length STEP 1  DO
+        FOR j FROM 0 TO v2.length STEP 1  DO
+            IF (dot_product(v1[i], v2[j]) = 0) THEN
+                Write("v1 and v2 are orthogonal") ;
+                break;
+            ELSE
+                Write("v1 and v2 are not orthogonal") ;
+                break;
+            END_IF
+        END_FOR
+    END_FOR
+END
